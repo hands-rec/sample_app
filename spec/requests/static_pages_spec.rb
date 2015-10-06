@@ -10,9 +10,9 @@ describe "Static pages" do
       expect(page).to have_content('Sample App')
     end
 
-    it "should have the title 'Home'" do
+    it "should not have the title 'Home'" do
       visit '/static_pages/home'
-      expect(page).to have_title("#{base_title} | Home")
+      expect(page).not_to have_title("#{base_title} | Home")
     end
   end
 
@@ -34,7 +34,7 @@ describe "Static pages" do
       expect(page).to have_content('About Us')
     end
 
-    it "should have the title 'About Us'" do
+    it "should have the title 'about us'" do
       visit '/static_pages/about'
       expect(page).to have_title("#{base_title} | About Us")
     end
